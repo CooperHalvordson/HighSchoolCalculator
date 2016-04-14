@@ -1,0 +1,58 @@
+
+public class Algebra {
+	public void quadratic(double a, double b, double c) {
+		double sol1, sol2;
+		sol1 = (((b*-1) + Math.sqrt((b*b) - (4 * a * c)))/(2*a));
+		sol2 = (((b*-1) - Math.sqrt((b*b) - (4 * a * c)))/(2*a));
+		System.out.println("x = " + sol1 + ", " + sol2);
+	}
+	
+	public void slope(double x1, double y1, double x2, double y2) {
+		double m;
+		m = (y2 - y1) / (x2 - x1);
+		System.out.println("m = " + m);
+	}
+	
+	public int GCF(int x, int y) {
+		if(y == 0)
+			return x;
+		return GCF(y, x%y);
+	}
+	
+	public int LCM(int x, int y) {
+		int lcm = (Math.abs(x*y))/GCF(x,y);
+		return lcm;
+	}
+	
+	public double diffofsquares(double x, double y) {
+		double a = Math.sqrt(x);
+		double b = Math.sqrt(y);
+		double diff = (a + b)*(a - b);
+		return diff;
+	}
+	
+	public double prediction(double a, double b, double c) {
+		//just a proportion solver
+		//form is a/b = sol/c
+		//can be used to make predictions
+		//ex. if Mats Zuccarello has 15 goals in 40 games,
+		//how many goals is he on track to have by the end
+		//of the season? (82 games)
+		double sol;
+		sol = (a*c)/b;
+		return sol;
+	}
+	
+	public double CompoundInterest(double p, double rate, double n, double years) {
+		double a;
+		a = p*Math.pow(((1 + rate/n)), n*years);
+		return a;
+	}
+	
+	public double ContinuousCompound(double p, double rate, double years) {
+		double a;
+		a = p*Math.pow(Math.E, rate*years);
+		return a;
+	}
+
+}
