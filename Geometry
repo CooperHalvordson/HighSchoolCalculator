@@ -1,0 +1,58 @@
+
+public class Geometry {
+	public double dist2points(double x1, double y1, double x2, double y2) {
+		double distnoroot;
+		distnoroot = (x2 - x1)*(x2 - x1) + (y2 - y1)*(y2 - y1);
+		double ans = Math.sqrt(distnoroot);
+		return ans;
+	}
+	
+	public double circlecircumference(double radius) {
+		double circ;
+		circ = 2 * Math.PI * radius;
+		return circ;
+	}
+	
+	public double recperimeter(double length, double width) {
+		double perim = 2*length + 2*width;
+		return perim;
+	}
+	
+	public double recarea(double length, double width) {
+		double area = length*width;
+		return area;
+	}
+	
+	public double recprismSA(double l, double w, double h) {
+		double SA = 2*(w*l + h*l + h*w);
+		return SA;
+	}
+	
+	public double recprismvol(double l, double w, double h) {
+		double vol = w*h*l;
+		return vol;
+	}
+	
+	public double sphereSA(double radius) {
+		double SA = 4 * Math.PI * (radius*radius);
+		return SA;
+	}
+	
+	public double spherevol(double radius) {
+		double vol = (4/3) * Math.PI * (Math.pow(radius, 3));
+		return vol;
+	}
+	
+	public void anglesgivensides(double a, double b, double c) {
+		//a, b, and c are sides a, b, and c
+		double angleA = Math.acos((b*b + c*c - a*a)/(2 * b * c));
+		double angleB = Math.asin((Math.sin(angleA) * b)/a);
+		angleA = Math.toDegrees(angleA);
+		angleB = Math.toDegrees(angleB);
+		double angleC = 180 - (angleA + angleB);
+		System.out.println("Angle A = " + angleA + "Angle B = " + angleB + "Angle C = " + angleC);
+	}
+	
+	
+
+}
