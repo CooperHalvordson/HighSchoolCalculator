@@ -1,46 +1,54 @@
 
 public class Geometry {
-	public double dist2points(double x1, double y1, double x2, double y2) {
+	public String dist2points(double x1, double y1, double x2, double y2) {
 		double distnoroot;
 		distnoroot = (x2 - x1)*(x2 - x1) + (y2 - y1)*(y2 - y1);
-		double ans = Math.sqrt(distnoroot);
+		double a = Math.sqrt(distnoroot);
+		String ans = Double.toString(a);
 		return ans;
 	}
 	
-	public double circlecircumference(double radius) {
+	public String circlecircumference(double radius) {
 		double circ;
 		circ = 2 * Math.PI * radius;
-		return circ;
+		String ans = Double.toString(circ);
+		return ans;
 	}
 	
-	public double recperimeter(double length, double width) {
+	public String recperimeter(double length, double width) {
 		double perim = 2*length + 2*width;
-		return perim;
+		String ans = Double.toString(perim);
+		return ans;
 	}
 	
-	public double recarea(double length, double width) {
+	public String recarea(double length, double width) {
 		double area = length*width;
-		return area;
+		String ans = Double.toString(area);
+		return ans;
 	}
 	
-	public double recprismSA(double l, double w, double h) {
+	public String recprismSA(double l, double w, double h) {
 		double SA = 2*(w*l + h*l + h*w);
-		return SA;
+		String ans = Double.toString(SA);
+		return ans;
 	}
 	
-	public double recprismvol(double l, double w, double h) {
+	public String recprismvol(double l, double w, double h) {
 		double vol = w*h*l;
-		return vol;
+		String ans = Double.toString(vol);
+		return ans;
 	}
 	
-	public double sphereSA(double radius) {
+	public String sphereSA(double radius) {
 		double SA = 4 * Math.PI * (radius*radius);
-		return SA;
+		String ans = Double.toString(SA);
+		return ans;
 	}
 	
-	public double spherevol(double radius) {
+	public String spherevol(double radius) {
 		double vol = (4/3) * Math.PI * (Math.pow(radius, 3));
-		return vol;
+		String ans = Double.toString(vol);
+		return ans;
 	}
 	
 	public void anglesgivensides(double a, double b, double c) {
