@@ -1,0 +1,88 @@
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.AbstractButton;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
+public class calculator extends JPanel implements ActionListener {
+	JMenu eqns = new JMenu("Equations");
+	JMenu variables = new JMenu("Enter Variables"); 
+	JButton bNext, bBack;
+	static int scene = 1;
+
+	public calculator() {
+		super(new BorderLayout());
+        
+		bBack = new JButton("Back");
+		bBack.setVerticalTextPosition(AbstractButton.BOTTOM);
+		bBack.setHorizontalTextPosition(AbstractButton.TRAILING);
+		bBack.setActionCommand("back");
+		
+		bNext = new JButton("Next");
+		bNext.setVerticalTextPosition(AbstractButton.BOTTOM);
+		bNext.setHorizontalTextPosition(AbstractButton.LEADING);
+		bNext.setActionCommand("next");
+		
+		bNext.addActionListener(this);
+		bBack.addActionListener(this);
+		
+		add(bBack,BorderLayout.WEST);
+		add(bNext,BorderLayout.EAST);
+	}
+	
+	
+	public selector getBack() {
+		selector sel = new selector();
+		return sel;
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+        if ("next".equals(e.getActionCommand())) {
+			scene += 1;
+        }
+    }
+
+
+	public Container createContentPane() {
+	        //Create the content-pane-to-be.
+	        JPanel contentPane = new JPanel(new BorderLayout());
+	        contentPane.setOpaque(true);
+	 
+	        return contentPane;
+	}
+
+	private static void createAndShowGUI() {
+        //Create and set up the window.
+		JFrame frame = new JFrame("alculator");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+ 
+        //Create and set up the content pane.
+        JPanel demo;
+        demo = new calculator();
+        
+        
+        demo.setOpaque(true);
+        frame.setContentPane(demo);
+ 
+        //Display the window.
+        frame.setSize(400, 360);
+        frame.setVisible(true);
+    }
+	/**public static void main(String[] args) {
+		javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                createAndShowGUI();
+            }
+        });
+    }*/
+}
